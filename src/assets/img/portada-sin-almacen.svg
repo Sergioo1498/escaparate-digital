@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Un portátil, una pila de cajas y una casa unidos por una ruta de puntos" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+<title>Un portátil, una pila de cajas y una casa unidos por una ruta de puntos</title>
+<rect width="1200" height="600" fill="#f3e3d9"/>
+<circle cx="1050" cy="90" r="210" fill="#ecd3c3"/>
+<circle cx="120" cy="560" r="170" fill="#ecd3c3"/>
+<path d="M235 330 C 400 150, 520 150, 600 300 S 820 460, 965 280" fill="none" stroke="#a8401f" stroke-width="5" stroke-dasharray="4 18" stroke-linecap="round"/>
+<rect x="130" y="250" width="210" height="140" rx="14" fill="#1e1c19"/>
+<rect x="144" y="264" width="182" height="112" rx="6" fill="#f8f5ef"/>
+<rect x="100" y="392" width="270" height="16" rx="8" fill="#1e1c19"/>
+<rect x="160" y="282" width="60" height="44" rx="5" fill="#a8401f"/>
+<rect x="232" y="282" width="78" height="10" rx="5" fill="#5c574f"/><rect x="232" y="302" width="56" height="10" rx="5" fill="#c9c2b6"/>
+<rect x="160" y="340" width="150" height="20" rx="10" fill="#1f6f6b"/>
+<rect x="520" y="318" width="120" height="96" rx="8" fill="#d9a066"/><rect x="520" y="318" width="120" height="26" rx="8" fill="#c58a4d"/><rect x="570" y="318" width="19" height="96" fill="#f8f5ef" fill-opacity=".55"/>
+<rect x="650" y="318" width="120" height="96" rx="8" fill="#cf9257"/><rect x="650" y="318" width="120" height="26" rx="8" fill="#b97c40"/><rect x="700" y="318" width="19" height="96" fill="#f8f5ef" fill-opacity=".55"/>
+<rect x="585" y="206" width="120" height="96" rx="8" fill="#e0ad77"/><rect x="585" y="206" width="120" height="26" rx="8" fill="#cf9257"/><rect x="635" y="206" width="19" height="96" fill="#f8f5ef" fill-opacity=".55"/>
+<path d="M900 300 L985 225 L1070 300 Z" fill="#a8401f"/>
+<rect x="915" y="300" width="140" height="110" fill="#f8f5ef"/>
+<rect x="965" y="340" width="40" height="70" rx="4" fill="#1f6f6b"/>
+<rect x="925" y="322" width="28" height="28" rx="3" fill="#ecd3c3"/><rect x="1017" y="322" width="28" height="28" rx="3" fill="#ecd3c3"/>
+<rect x="60" y="420" width="1080" height="6" rx="3" fill="#1e1c19" fill-opacity=".15"/>
+</svg>

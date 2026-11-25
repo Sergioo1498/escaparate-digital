@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Un botón de reproducción rodeado de círculos de espectadores" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+<title>Un botón de reproducción rodeado de círculos de espectadores</title>
+<rect width="1200" height="600" fill="#231f3a"/>
+<circle cx="600" cy="300" r="420" fill="#f29a76" fill-opacity="0.05"/>
+<circle cx="600" cy="300" r="330" fill="#f29a76" fill-opacity="0.07"/>
+<circle cx="600" cy="300" r="240" fill="#f29a76" fill-opacity="0.1"/>
+<circle cx="600" cy="300" r="150" fill="#f29a76" fill-opacity="0.14"/>
+<circle cx="840" cy="288" r="9" fill="#f29a76"/><path d="M825 318 a15 15 0 0 1 30 0 Z" fill="#f29a76"/>
+<circle cx="784" cy="415" r="9" fill="#cfc9e6"/><path d="M769 445 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="642" cy="482" r="9" fill="#cfc9e6"/><path d="M627 512 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="480" cy="458" r="9" fill="#cfc9e6"/><path d="M465 488 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="374" cy="355" r="9" fill="#f29a76"/><path d="M359 385 a15 15 0 0 1 30 0 Z" fill="#f29a76"/>
+<circle cx="374" cy="221" r="9" fill="#cfc9e6"/><path d="M359 251 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="480" cy="118" r="9" fill="#cfc9e6"/><path d="M465 148 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="642" cy="94" r="9" fill="#cfc9e6"/><path d="M627 124 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="784" cy="161" r="9" fill="#f29a76"/><path d="M769 191 a15 15 0 0 1 30 0 Z" fill="#f29a76"/>
+<circle cx="910" cy="381" r="9" fill="#cfc9e6"/><path d="M895 411 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="830" cy="482" r="9" fill="#cfc9e6"/><path d="M815 512 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="705" cy="545" r="9" fill="#cfc9e6"/><path d="M690 575 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="559" cy="556" r="9" fill="#f29a76"/><path d="M544 586 a15 15 0 0 1 30 0 Z" fill="#f29a76"/>
+<circle cx="421" cy="515" r="9" fill="#cfc9e6"/><path d="M406 545 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="318" cy="429" r="9" fill="#cfc9e6"/><path d="M303 459 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="272" cy="315" r="9" fill="#cfc9e6"/><path d="M257 345 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="290" cy="195" r="9" fill="#f29a76"/><path d="M275 225 a15 15 0 0 1 30 0 Z" fill="#f29a76"/>
+<circle cx="370" cy="94" r="9" fill="#cfc9e6"/><path d="M355 124 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="495" cy="31" r="9" fill="#cfc9e6"/><path d="M480 61 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="641" cy="20" r="9" fill="#cfc9e6"/><path d="M626 50 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="779" cy="61" r="9" fill="#f29a76"/><path d="M764 91 a15 15 0 0 1 30 0 Z" fill="#f29a76"/>
+<circle cx="882" cy="147" r="9" fill="#cfc9e6"/><path d="M867 177 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="928" cy="261" r="9" fill="#cfc9e6"/><path d="M913 291 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="921" cy="510" r="9" fill="#cfc9e6"/><path d="M906 540 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="329" cy="551" r="9" fill="#cfc9e6"/><path d="M314 581 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="243" cy="470" r="9" fill="#f29a76"/><path d="M228 500 a15 15 0 0 1 30 0 Z" fill="#f29a76"/>
+<circle cx="192" cy="371" r="9" fill="#cfc9e6"/><path d="M177 401 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="181" cy="263" r="9" fill="#cfc9e6"/><path d="M166 293 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="211" cy="158" r="9" fill="#cfc9e6"/><path d="M196 188 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="279" cy="66" r="9" fill="#f29a76"/><path d="M264 96 a15 15 0 0 1 30 0 Z" fill="#f29a76"/>
+<circle cx="871" cy="25" r="9" fill="#cfc9e6"/><path d="M856 55 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="957" cy="106" r="9" fill="#cfc9e6"/><path d="M942 136 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="1008" cy="205" r="9" fill="#cfc9e6"/><path d="M993 235 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="1019" cy="313" r="9" fill="#f29a76"/><path d="M1004 343 a15 15 0 0 1 30 0 Z" fill="#f29a76"/>
+<circle cx="989" cy="418" r="9" fill="#cfc9e6"/><path d="M974 448 a15 15 0 0 1 30 0 Z" fill="#cfc9e6"/>
+<circle cx="600" cy="300" r="92" fill="#f29a76"/>
+<path d="M578 258 L648 300 L578 342 Z" fill="#231f3a"/>
+</svg>

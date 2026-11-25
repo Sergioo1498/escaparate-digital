@@ -1,0 +1,20 @@
+---
+layout: layouts/base.njk
+title: Etiquetas
+description: Las entradas del blog agrupadas por tema.
+seccion: etiquetas
+---
+<section class="contenedor contenedor--estrecho pagina">
+  <h1>Etiquetas</h1>
+  <p class="pagina__intro">Las entradas agrupadas por tema. Pulsa en una etiqueta para ver solo las suyas.</p>
+  <ul class="nube">
+    {%- for etiqueta in collections.etiquetas %}
+    <li>
+      <a href="/etiquetas/{{ etiqueta.nombre | slugify }}/">
+        <span>{{ etiqueta.nombre }}</span>
+        <span class="nube__cuenta">{{ etiqueta.entradas.length }}</span>
+      </a>
+    </li>
+    {%- endfor %}
+  </ul>
+</section>

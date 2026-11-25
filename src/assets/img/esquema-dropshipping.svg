@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 400" width="880" height="400" role="img" aria-label="Esquema del recorrido de un pedido entre cliente, tienda y proveedor" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+<title>Esquema del recorrido de un pedido entre cliente, tienda y proveedor</title>
+<rect width="880" height="400" fill="#ffffff"/>
+<defs><marker id="f" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M0 0 L10 5 L0 10 z" fill="#1e1c19"/></marker></defs>
+<text x="40" y="44" font-family="'Iowan Old Style', 'Palatino Linotype', Georgia, serif" font-size="22" font-weight="700" fill="#1e1c19">Así viaja un pedido cuando la tienda no tiene almacén</text>
+<rect x="40" y="140" width="200" height="92" rx="14" fill="#1f6f6b"/><text x="140" y="180" font-size="19" font-weight="700" fill="#fff" text-anchor="middle">Cliente</text><text x="140" y="204" font-size="13.5" fill="#fff" fill-opacity=".9" text-anchor="middle">compra y paga</text>
+<rect x="340" y="140" width="200" height="92" rx="14" fill="#a8401f"/><text x="440" y="180" font-size="19" font-weight="700" fill="#fff" text-anchor="middle">Tu tienda</text><text x="440" y="204" font-size="13.5" fill="#fff" fill-opacity=".9" text-anchor="middle">cobra y reenvía el pedido</text>
+<rect x="640" y="140" width="200" height="92" rx="14" fill="#4a4458"/><text x="740" y="180" font-size="19" font-weight="700" fill="#fff" text-anchor="middle">Proveedor</text><text x="740" y="204" font-size="13.5" fill="#fff" fill-opacity=".9" text-anchor="middle">tiene el producto</text>
+<line x1="245" y1="186" x2="333" y2="186" stroke="#1e1c19" stroke-width="2.5" marker-end="url(#f)"/>
+<line x1="545" y1="186" x2="633" y2="186" stroke="#1e1c19" stroke-width="2.5" marker-end="url(#f)"/>
+<path d="M740 237 V 320 H 140 V 242" fill="none" stroke="#1e1c19" stroke-width="2.5" stroke-dasharray="7 7" marker-end="url(#f)"/>
+<circle cx="290" cy="118" r="13" fill="#1e1c19"/><text x="290" y="123" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">1</text><text x="290" y="96" font-size="13.5" fill="#1e1c19" text-anchor="middle">Pedido y pago</text>
+<circle cx="590" cy="118" r="13" fill="#1e1c19"/><text x="590" y="123" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">2</text><text x="590" y="96" font-size="13.5" fill="#1e1c19" text-anchor="middle">Pedido a precio de coste</text>
+<circle cx="440" cy="320" r="13" fill="#1e1c19"/><text x="440" y="325" font-size="14" font-weight="700" fill="#fff" text-anchor="middle">3</text><text x="440" y="352" font-size="13.5" fill="#1e1c19" text-anchor="middle">El proveedor envía el paquete directamente al cliente</text>
+<text x="40" y="382" font-size="12.5" fill="#5c574f">El margen es la diferencia entre el paso 1 y el paso 2. Ante el cliente, el vendedor sigue siendo la tienda. Esquema propio.</text>
+</svg>

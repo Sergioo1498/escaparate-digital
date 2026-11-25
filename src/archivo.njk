@@ -1,0 +1,18 @@
+---
+layout: layouts/base.njk
+title: Archivo
+description: Todas las entradas del blog, de la más reciente a la más antigua.
+---
+<section class="contenedor contenedor--estrecho pagina">
+  <h1>Archivo</h1>
+  <p class="pagina__intro">{{ collections.entradas.length }} entradas publicadas, de la más reciente a la más antigua.</p>
+  <ol class="lista-archivo" reversed>
+    {%- for entrada in collections.entradas %}
+    <li>
+      <time datetime="{{ entrada.date | fechaISO }}">{{ entrada.date | fechaLarga }}</time>
+      <a href="{{ entrada.url }}">{{ entrada.data.title }}</a>
+      <p>{{ entrada.data.description }}</p>
+    </li>
+    {%- endfor %}
+  </ol>
+</section>

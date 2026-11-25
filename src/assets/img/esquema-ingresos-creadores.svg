@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 880 420" width="880" height="420" role="img" aria-label="Cinco fuentes de ingresos de un creador ordenadas de menos a más control" font-family="system-ui, -apple-system, 'Segoe UI', Roboto, Arial, sans-serif">
+<title>Cinco fuentes de ingresos de un creador ordenadas de menos a más control</title>
+<rect width="880" height="420" fill="#ffffff"/>
+<text x="40" y="44" font-family="'Iowan Old Style', 'Palatino Linotype', Georgia, serif" font-size="22" font-weight="700" fill="#1e1c19">Cinco fuentes de ingresos, de menos a más control</text>
+<text x="40" y="70" font-size="14" fill="#5c574f">Cuánto depende cada una de decisiones que el creador no toma</text>
+<text x="40" y="120" font-size="16" font-weight="700" fill="#1e1c19">Publicidad de la plataforma</text>
+<text x="40" y="140" font-size="13" fill="#5c574f">La plataforma decide cuánto paga y a quién enseña el vídeo</text>
+<rect x="560" y="108" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="616" y="108" width="48" height="22" rx="6" fill="#ece6db"/>
+<rect x="672" y="108" width="48" height="22" rx="6" fill="#ece6db"/>
+<rect x="728" y="108" width="48" height="22" rx="6" fill="#ece6db"/>
+<rect x="784" y="108" width="48" height="22" rx="6" fill="#ece6db"/>
+<text x="40" y="176" font-size="16" font-weight="700" fill="#1e1c19">Patrocinios</text>
+<text x="40" y="196" font-size="13" fill="#5c574f">Ingreso alto pero irregular; depende de que las marcas llamen</text>
+<rect x="560" y="164" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="616" y="164" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="672" y="164" width="48" height="22" rx="6" fill="#ece6db"/>
+<rect x="728" y="164" width="48" height="22" rx="6" fill="#ece6db"/>
+<rect x="784" y="164" width="48" height="22" rx="6" fill="#ece6db"/>
+<text x="40" y="232" font-size="16" font-weight="700" fill="#1e1c19">Afiliación</text>
+<text x="40" y="252" font-size="13" fill="#5c574f">Comisión por venta; las condiciones las fija un tercero</text>
+<rect x="560" y="220" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="616" y="220" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="672" y="220" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="728" y="220" width="48" height="22" rx="6" fill="#ece6db"/>
+<rect x="784" y="220" width="48" height="22" rx="6" fill="#ece6db"/>
+<text x="40" y="288" font-size="16" font-weight="700" fill="#1e1c19">Suscripciones y miembros</text>
+<text x="40" y="308" font-size="13" fill="#5c574f">Ingreso recurrente que paga directamente la audiencia</text>
+<rect x="560" y="276" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="616" y="276" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="672" y="276" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="728" y="276" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="784" y="276" width="48" height="22" rx="6" fill="#ece6db"/>
+<text x="40" y="344" font-size="16" font-weight="700" fill="#1e1c19">Productos propios</text>
+<text x="40" y="364" font-size="13" fill="#5c574f">Cursos, libros o tienda: precio y cliente son del creador</text>
+<rect x="560" y="332" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="616" y="332" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="672" y="332" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="728" y="332" width="48" height="22" rx="6" fill="#a8401f"/>
+<rect x="784" y="332" width="48" height="22" rx="6" fill="#a8401f"/>
+<text x="560" y="390" font-size="12.5" fill="#5c574f">menos control</text>
+<text x="832" y="390" font-size="12.5" fill="#5c574f" text-anchor="end">más control</text>
+<text x="40" y="402" font-size="12.5" fill="#5c574f">Esquema propio: es una ordenación cualitativa, no una medición.</text>
+</svg>

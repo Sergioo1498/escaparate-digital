@@ -1,0 +1,770 @@
+/* ==========================================================================
+   Escaparate digital · hoja de estilos
+   1. Variables   2. Base   3. Estructura   4. Cabecera y pie
+   5. Portada     6. Tarjetas   7. Entrada   8. Páginas   9. Utilidades
+   ========================================================================== */
+
+/* 1. Variables ------------------------------------------------------------ */
+:root {
+  --fondo: #f8f5ef;
+  --superficie: #ffffff;
+  --texto: #1e1c19;
+  --texto-suave: #5c574f;
+  --borde: #e3ddd2;
+  --acento: #a8401f;
+  --acento-suave: #f3e3d9;
+  --sombra: 0 1px 2px rgb(30 28 25 / 6%), 0 8px 24px rgb(30 28 25 / 7%);
+
+  --fuente-titulos: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --fuente-texto: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --fuente-codigo: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+  --ancho: 68rem;
+  --ancho-lectura: 44rem;
+  --radio: 14px;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fondo: #15161a;
+    --superficie: #1d1f25;
+    --texto: #ece8e1;
+    --texto-suave: #a9a49b;
+    --borde: #2e3038;
+    --acento: #f29a76;
+    --acento-suave: #3a2a24;
+    --sombra: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 35%);
+  }
+}
+
+/* 2. Base ----------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--fondo);
+  color: var(--texto);
+  font-family: var(--fuente-texto);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+main {
+  flex: 1;
+  padding-bottom: 4rem;
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--fuente-titulos);
+  line-height: 1.2;
+  text-wrap: balance;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: var(--acento);
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  text-decoration-thickness: 2px;
+}
+
+:focus-visible {
+  outline: 3px solid var(--acento);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+ul[class],
+ol[class] {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 3. Estructura ----------------------------------------------------------- */
+.contenedor {
+  width: min(100% - 2.5rem, var(--ancho));
+  margin-inline: auto;
+}
+
+.contenedor--estrecho {
+  width: min(100% - 2.5rem, var(--ancho-lectura));
+}
+
+.salto {
+  position: absolute;
+  left: 1rem;
+  top: -4rem;
+  z-index: 20;
+  padding: 0.6rem 1rem;
+  background: var(--acento);
+  color: var(--fondo);
+  border-radius: 8px;
+  font-weight: 600;
+}
+
+.salto:focus {
+  top: 1rem;
+}
+
+/* 4. Cabecera y pie ------------------------------------------------------- */
+.cabecera {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  background: color-mix(in srgb, var(--fondo) 88%, transparent);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--borde);
+}
+
+.cabecera__interior {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem 1.5rem;
+  padding-block: 0.8rem;
+}
+
+.marca {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--texto);
+  text-decoration: none;
+  font-family: var(--fuente-titulos);
+  font-size: 1.25rem;
+  font-weight: 700;
+}
+
+.marca__icono {
+  color: var(--acento);
+  flex-shrink: 0;
+}
+
+.menu ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.menu a {
+  display: block;
+  padding: 0.4rem 0.8rem;
+  border-radius: 999px;
+  color: var(--texto-suave);
+  text-decoration: none;
+  font-size: 0.97rem;
+  font-weight: 500;
+  transition: background-color 0.15s, color 0.15s;
+}
+
+.menu a:hover {
+  color: var(--texto);
+  background: var(--borde);
+}
+
+.menu a[aria-current="page"] {
+  color: var(--acento);
+  background: var(--acento-suave);
+}
+
+.pie {
+  border-top: 1px solid var(--borde);
+  background: var(--superficie);
+  color: var(--texto-suave);
+  font-size: 0.95rem;
+}
+
+.pie__interior {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1.5rem 3rem;
+  padding-block: 2.2rem;
+}
+
+.pie__titulo {
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--texto);
+}
+
+.pie__enlaces {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 0.35rem 2rem;
+}
+
+/* 5. Portada -------------------------------------------------------------- */
+.presentacion {
+  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.presentacion__antetitulo {
+  color: var(--acento);
+  font-weight: 700;
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-bottom: 0.8rem;
+}
+
+.presentacion h1 {
+  font-size: clamp(2.1rem, 5.5vw, 3.6rem);
+  max-width: 18ch;
+  letter-spacing: -0.01em;
+}
+
+.presentacion__texto {
+  margin-top: 1.2rem;
+  max-width: 58ch;
+  font-size: 1.15rem;
+  color: var(--texto-suave);
+}
+
+.titulo-seccion {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-block: 2.5rem 1.2rem;
+  font-family: var(--fuente-texto);
+  font-size: 0.85rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+}
+
+.titulo-seccion::after {
+  content: "";
+  flex: 1;
+  height: 1px;
+  background: var(--borde);
+}
+
+/* 6. Tarjetas ------------------------------------------------------------- */
+.rejilla {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(min(100%, 18.5rem), 1fr));
+  gap: 1.5rem;
+}
+
+.tarjeta {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  overflow: hidden;
+  box-shadow: var(--sombra);
+  transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.tarjeta:hover {
+  transform: translateY(-3px);
+  border-color: var(--acento);
+}
+
+.tarjeta__imagen img {
+  width: 100%;
+  aspect-ratio: 2 / 1;
+  object-fit: cover;
+}
+
+.tarjeta__cuerpo {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 1.2rem 1.3rem 1.4rem;
+  flex: 1;
+}
+
+.tarjeta__titulo {
+  font-size: 1.35rem;
+}
+
+.tarjeta__titulo a {
+  color: var(--texto);
+  text-decoration: none;
+}
+
+/* Toda la tarjeta es pulsable, pero el enlace real sigue siendo el título */
+.tarjeta__titulo a::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+}
+
+.tarjeta:hover .tarjeta__titulo a {
+  color: var(--acento);
+}
+
+.tarjeta__resumen {
+  color: var(--texto-suave);
+  font-size: 0.98rem;
+  flex: 1;
+}
+
+.tarjeta .etiquetas {
+  position: relative;
+  z-index: 1;
+}
+
+@media (min-width: 52rem) {
+  .tarjeta--destacada {
+    flex-direction: row;
+  }
+
+  .tarjeta--destacada .tarjeta__imagen {
+    flex: 1.25;
+  }
+
+  .tarjeta--destacada .tarjeta__imagen img {
+    height: 100%;
+    aspect-ratio: auto;
+  }
+
+  .tarjeta--destacada .tarjeta__cuerpo {
+    flex: 1;
+    justify-content: center;
+    padding: 2rem;
+  }
+
+  .tarjeta--destacada .tarjeta__titulo {
+    font-size: 1.9rem;
+  }
+
+  .tarjeta--destacada .tarjeta__resumen {
+    flex: 0;
+    font-size: 1.05rem;
+  }
+}
+
+.meta {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.5rem;
+  color: var(--texto-suave);
+  font-size: 0.88rem;
+}
+
+.etiquetas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.etiquetas a {
+  display: block;
+  padding: 0.15rem 0.65rem;
+  border-radius: 999px;
+  background: var(--acento-suave);
+  color: var(--acento);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.etiquetas a:hover {
+  background: var(--acento);
+  color: var(--fondo);
+}
+
+/* 7. Entrada -------------------------------------------------------------- */
+.migas ol {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.2rem 0.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+}
+
+.migas li + li::before {
+  content: "/";
+  margin-right: 0.5rem;
+  color: var(--borde);
+}
+
+.entrada__cabecera {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  padding-block: clamp(2rem, 5vw, 3.5rem) 2rem;
+}
+
+.entrada__cabecera h1 {
+  font-size: clamp(2rem, 5vw, 3rem);
+  letter-spacing: -0.01em;
+}
+
+.entrada__resumen {
+  font-size: 1.2rem;
+  color: var(--texto-suave);
+}
+
+.entrada__portada {
+  margin-block: 0 2.5rem;
+}
+
+.entrada__portada img {
+  width: 100%;
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
+}
+
+.prosa > * + * {
+  margin-top: 1.25rem;
+}
+
+.prosa h2 {
+  font-size: 1.7rem;
+  margin-top: 2.8rem;
+}
+
+.prosa h3 {
+  font-size: 1.3rem;
+  margin-top: 2rem;
+}
+
+.prosa ul,
+.prosa ol {
+  padding-left: 1.3rem;
+}
+
+.prosa li + li {
+  margin-top: 0.45rem;
+}
+
+.prosa li::marker {
+  color: var(--acento);
+}
+
+.prosa strong {
+  font-weight: 650;
+}
+
+.prosa blockquote {
+  margin-inline: 0;
+  padding: 1rem 1.3rem;
+  border-left: 4px solid var(--acento);
+  background: var(--acento-suave);
+  border-radius: 0 var(--radio) var(--radio) 0;
+}
+
+.prosa figure {
+  margin: 2.2rem 0;
+}
+
+.prosa figure img {
+  width: 100%;
+  border-radius: var(--radio);
+  border: 1px solid var(--borde);
+  background: #ffffff;
+}
+
+.prosa figcaption,
+.entrada__portada figcaption {
+  margin-top: 0.6rem;
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+  text-align: center;
+}
+
+.tabla-envoltorio {
+  overflow-x: auto;
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  background: var(--superficie);
+}
+
+.prosa table {
+  width: 100%;
+  min-width: 34rem;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+.prosa th,
+.prosa td {
+  padding: 0.7rem 0.9rem;
+  text-align: left;
+  vertical-align: top;
+  border-bottom: 1px solid var(--borde);
+}
+
+.prosa thead th {
+  font-size: 0.8rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--texto-suave);
+  background: var(--fondo);
+}
+
+.prosa tbody tr:last-child > * {
+  border-bottom: 0;
+}
+
+.prosa tbody th {
+  font-weight: 650;
+}
+
+.dato {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
+  gap: 0.8rem;
+  list-style: none;
+  padding: 0 !important;
+}
+
+.prosa > .dato {
+  margin-top: 1.6rem;
+}
+
+.dato li {
+  margin: 0 !important;
+  padding: 1rem 1.1rem;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  font-size: 0.9rem;
+  color: var(--texto-suave);
+}
+
+.dato strong {
+  display: block;
+  font-family: var(--fuente-titulos);
+  font-size: 1.7rem;
+  line-height: 1.1;
+  color: var(--acento);
+}
+
+.fuentes {
+  margin-top: 3rem;
+  padding-top: 1.3rem;
+  border-top: 1px solid var(--borde);
+  font-size: 0.92rem;
+  color: var(--texto-suave);
+}
+
+.fuentes h2 {
+  font-family: var(--fuente-texto);
+  font-size: 0.85rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin-top: 0;
+}
+
+.vecinas {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
+  gap: 1rem;
+  margin-top: 3.5rem;
+}
+
+.vecinas__enlace {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  padding: 1rem 1.2rem;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: var(--radio);
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.vecinas__enlace:hover {
+  border-color: var(--acento);
+}
+
+.vecinas__enlace--siguiente {
+  text-align: right;
+}
+
+.vecinas__sentido {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--texto-suave);
+}
+
+.vecinas__titulo {
+  font-family: var(--fuente-titulos);
+  font-weight: 700;
+  color: var(--texto);
+  line-height: 1.3;
+}
+
+.volver {
+  margin-top: 2rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* 8. Páginas -------------------------------------------------------------- */
+.pagina {
+  padding-top: clamp(2rem, 5vw, 3.5rem);
+}
+
+.pagina h1 {
+  font-size: clamp(2rem, 5vw, 2.8rem);
+  margin-block: 0.8rem 0.6rem;
+}
+
+.pagina__intro {
+  color: var(--texto-suave);
+  font-size: 1.1rem;
+  margin-bottom: 2rem;
+}
+
+.pagina--centrada {
+  text-align: center;
+}
+
+.error__codigo {
+  font-family: var(--fuente-titulos);
+  font-size: clamp(5rem, 20vw, 9rem);
+  font-weight: 700;
+  line-height: 1;
+  color: var(--acento-suave);
+}
+
+.lista-archivo li {
+  display: grid;
+  gap: 0.2rem;
+  padding-block: 1.2rem;
+  border-bottom: 1px solid var(--borde);
+}
+
+.lista-archivo time {
+  font-size: 0.88rem;
+  color: var(--texto-suave);
+}
+
+.lista-archivo a {
+  font-family: var(--fuente-titulos);
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--texto);
+  text-decoration: none;
+}
+
+.lista-archivo a:hover {
+  color: var(--acento);
+  text-decoration: underline;
+}
+
+.lista-archivo p {
+  color: var(--texto-suave);
+  font-size: 0.98rem;
+}
+
+.nube {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+}
+
+.nube a {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.55rem 0.6rem 0.55rem 1.1rem;
+  background: var(--superficie);
+  border: 1px solid var(--borde);
+  border-radius: 999px;
+  color: var(--texto);
+  font-weight: 600;
+  text-decoration: none;
+  transition: border-color 0.2s;
+}
+
+.nube a:hover {
+  border-color: var(--acento);
+  color: var(--acento);
+}
+
+.nube__cuenta {
+  min-width: 1.7rem;
+  padding: 0.05rem 0.5rem;
+  border-radius: 999px;
+  background: var(--acento-suave);
+  color: var(--acento);
+  font-size: 0.82rem;
+  text-align: center;
+}
+
+/* 9. Utilidades ----------------------------------------------------------- */
+@media (max-width: 30rem) {
+  body {
+    font-size: 1rem;
+  }
+
+  .cabecera__interior {
+    justify-content: center;
+  }
+
+  .menu a {
+    padding: 0.35rem 0.6rem;
+    font-size: 0.92rem;
+  }
+
+  .pie__enlaces {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  * {
+    transition: none !important;
+  }
+}
+
+@media print {
+  .cabecera,
+  .pie,
+  .vecinas,
+  .volver,
+  .salto {
+    display: none;
+  }
+}

@@ -1,0 +1,10 @@
+---
+layout: layouts/base.njk
+---
+<article class="contenedor contenedor--estrecho pagina">
+  <h1>{{ title }}</h1>
+  <p class="pagina__intro">{{ description }}</p>
+  <div class="prosa">
+    {{ content | safe }}
+  </div>
+</article>

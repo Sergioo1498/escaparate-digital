@@ -1,0 +1,29 @@
+---
+layout: layouts/base.njk
+seccion: etiquetas
+pagination:
+  data: collections.etiquetas
+  size: 1
+  alias: etiqueta
+permalink: "/etiquetas/{{ etiqueta.nombre | slugify }}/"
+eleventyComputed:
+  title: "Etiqueta: {{ etiqueta.nombre }}"
+  description: "Entradas del blog etiquetadas con «{{ etiqueta.nombre }}»."
+---
+<section class="contenedor pagina">
+  <nav class="migas" aria-label="Ruta de navegación">
+    <ol>
+      <li><a href="/">Inicio</a></li>
+      <li><a href="/etiquetas/">Etiquetas</a></li>
+      <li aria-current="page">{{ etiqueta.nombre }}</li>
+    </ol>
+  </nav>
+  <h1>Entradas sobre «{{ etiqueta.nombre }}»</h1>
+  <div class="rejilla">
+    {%- set destacada = false %}
+    {%- for entrada in etiqueta.entradas %}
+      {% include "partials/tarjeta.njk" %}
+    {%- endfor %}
+  </div>
+  <p class="volver"><a href="/etiquetas/">Ver todas las etiquetas</a></p>
+</section>

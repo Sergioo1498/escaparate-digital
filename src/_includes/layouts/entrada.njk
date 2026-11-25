@@ -1,0 +1,55 @@
+---
+layout: layouts/base.njk
+seccion: archivo
+---
+<article class="entrada">
+  <header class="entrada__cabecera contenedor contenedor--estrecho">
+    <nav class="migas" aria-label="Ruta de navegación">
+      <ol>
+        <li><a href="/">Inicio</a></li>
+        <li><a href="/archivo/">Archivo</a></li>
+        <li aria-current="page">{{ title }}</li>
+      </ol>
+    </nav>
+    <h1>{{ title }}</h1>
+    <p class="entrada__resumen">{{ description }}</p>
+    <p class="meta">
+      <span>{{ site.author }}</span>
+      <span aria-hidden="true">·</span>
+      <time datetime="{{ page.date | fechaISO }}">{{ page.date | fechaLarga }}</time>
+      <span aria-hidden="true">·</span>
+      <span>{{ content | minutosLectura }} min de lectura</span>
+    </p>
+    <ul class="etiquetas" aria-label="Etiquetas">
+      {%- for etiqueta in etiquetas %}
+      <li><a href="/etiquetas/{{ etiqueta | slugify }}/">{{ etiqueta }}</a></li>
+      {%- endfor %}
+    </ul>
+  </header>
+
+  <figure class="entrada__portada contenedor">
+    <img src="{{ portada }}" alt="{{ portadaAlt }}" width="1200" height="600">
+  </figure>
+
+  <div class="prosa contenedor contenedor--estrecho">
+    {{ content | safe }}
+  </div>
+</article>
+
+{%- set anterior = collections.entradas | getNextCollectionItem %}
+{%- set siguiente = collections.entradas | getPreviousCollectionItem %}
+<nav class="vecinas contenedor contenedor--estrecho" aria-label="Otras entradas">
+  {%- if anterior %}
+  <a class="vecinas__enlace" href="{{ anterior.url }}" rel="prev">
+    <span class="vecinas__sentido">← Entrada anterior</span>
+    <span class="vecinas__titulo">{{ anterior.data.title }}</span>
+  </a>
+  {%- else %}<span></span>{%- endif %}
+  {%- if siguiente %}
+  <a class="vecinas__enlace vecinas__enlace--siguiente" href="{{ siguiente.url }}" rel="next">
+    <span class="vecinas__sentido">Entrada siguiente →</span>
+    <span class="vecinas__titulo">{{ siguiente.data.title }}</span>
+  </a>
+  {%- endif %}
+</nav>
+<p class="volver contenedor contenedor--estrecho"><a href="/archivo/">Ver todas las entradas</a></p>

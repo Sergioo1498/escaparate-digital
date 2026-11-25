@@ -1,0 +1,31 @@
+---
+layout: layouts/base.njk
+---
+<section class="presentacion contenedor">
+  <p class="presentacion__antetitulo">Negocios online, sin humo</p>
+  <h1>Cómo se vende hoy cuando la tienda es una pantalla</h1>
+  <p class="presentacion__texto">
+    Un blog sobre el auge de los negocios online: qué dicen los datos oficiales, qué modelos permiten
+    empezar con poco capital y qué obligaciones conviene conocer antes de cobrar el primer pedido.
+  </p>
+</section>
+
+<section class="contenedor" aria-labelledby="titulo-ultima">
+  <h2 class="titulo-seccion" id="titulo-ultima">Última entrada</h2>
+  {%- set entrada = collections.entradas[0] %}
+  {%- set destacada = true %}
+  {% include "partials/tarjeta.njk" %}
+</section>
+
+<section class="contenedor" aria-labelledby="titulo-anteriores">
+  <h2 class="titulo-seccion" id="titulo-anteriores">Entradas anteriores</h2>
+  <div class="rejilla">
+    {%- set destacada = false %}
+    {%- for entrada in collections.entradas %}
+      {%- if not loop.first %}
+        {% include "partials/tarjeta.njk" %}
+      {%- endif %}
+    {%- endfor %}
+  </div>
+  <p class="volver"><a href="/archivo/">Ver el archivo completo</a></p>
+</section>
