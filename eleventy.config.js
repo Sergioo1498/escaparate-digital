@@ -10,9 +10,14 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
   // Entradas ordenadas de la más reciente a la más antigua.
-  eleventyConfig.addCollection("entradas", (api) =>
-    api.getFilteredByGlob("src/posts/*.md").sort((a, b) => b.date - a.date)
-  );
+  // Cada una recibe además su número de orden (la primera publicada es la n.º 1).
+  eleventyConfig.addCollection("entradas", (api) => {
+    const entradas = api.getFilteredByGlob("src/posts/*.md").sort((a, b) => b.date - a.date);
+    entradas.forEach((entrada, i) => {
+      entrada.data.numero = String(entradas.length - i).padStart(2, "0");
+    });
+    return entradas;
+  });
 
   // Lista de etiquetas únicas con sus entradas, ordenada alfabéticamente.
   eleventyConfig.addCollection("etiquetas", (api) => {

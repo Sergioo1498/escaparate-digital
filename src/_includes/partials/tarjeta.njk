@@ -1,5 +1,6 @@
 <article class="tarjeta{% if destacada %} tarjeta--destacada{% endif %}">
   <a class="tarjeta__imagen" href="{{ entrada.url }}" tabindex="-1" aria-hidden="true">
+    <span class="tarjeta__numero">N.º {{ entrada.data.numero }}</span>
     <img src="{{ entrada.data.portada }}" alt="" width="1200" height="600" loading="{% if destacada %}eager{% else %}lazy{% endif %}">
   </a>
   <div class="tarjeta__cuerpo">
@@ -10,6 +11,7 @@
     </p>
     <h2 class="tarjeta__titulo"><a href="{{ entrada.url }}">{{ entrada.data.title }}</a></h2>
     <p class="tarjeta__resumen">{{ entrada.data.description }}</p>
+    <p class="tarjeta__leer" aria-hidden="true">Leer la entrada <span>→</span></p>
     <ul class="etiquetas" aria-label="Etiquetas">
       {%- for etiqueta in entrada.data.etiquetas %}
       <li><a href="/etiquetas/{{ etiqueta | slugify }}/">{{ etiqueta }}</a></li>

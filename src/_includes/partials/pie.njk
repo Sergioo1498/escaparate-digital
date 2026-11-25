@@ -1,17 +1,26 @@
 <footer class="pie">
+  <div class="toldo" aria-hidden="true"></div>
   <div class="contenedor pie__interior">
-    <div>
-      <p class="pie__titulo">{{ site.title }}</p>
+    <div class="pie__marca">
+      <a class="marca marca--pie" href="/" aria-label="{{ site.title }}, ir al inicio">
+      {% include "partials/logo.njk" %}
+      </a>
       <p>{{ site.description }}</p>
-      <p>Escrito y maquetado por {{ site.author }}.</p>
+      <p>Escrito, ilustrado y maquetado por {{ site.author }}.</p>
     </div>
     <nav aria-label="Enlaces del pie">
+      <p class="pie__titulo">Secciones</p>
       <ul class="pie__enlaces">
         <li><a href="/">Inicio</a></li>
         <li><a href="/archivo/">Archivo</a></li>
         <li><a href="/etiquetas/">Etiquetas</a></li>
         <li><a href="/sobre/">Sobre el blog</a></li>
-        <li><a href="/feed.xml">RSS</a></li>
+      </ul>
+    </nav>
+    <nav aria-label="Otros enlaces">
+      <p class="pie__titulo">Además</p>
+      <ul class="pie__enlaces">
+        <li><a href="/feed.xml">Canal RSS</a></li>
         <li><a href="{{ site.repo }}" rel="noopener">Código en GitHub</a></li>
       </ul>
     </nav>

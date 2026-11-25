@@ -1,3 +1,5 @@
+<p align="center"><img src="src/assets/img/logo.svg" alt="Escaparate digital" width="300"></p>
+
 # Escaparate digital
 
 Blog estático sobre el auge de los negocios online. Actividad 1 de la asignatura
@@ -14,7 +16,8 @@ Blog estático sobre el auge de los negocios online. Actividad 1 de la asignatur
 | Contenido | Markdown con *front matter* |
 | Plantillas | Nunjucks |
 | Estilos | Una hoja CSS propia (Flexbox, Grid y variables), sin frameworks |
-| Imágenes | Ilustraciones y gráficos SVG propios |
+| Tipografías | Fraunces e Instrument Sans (SIL OFL), alojadas en el sitio |
+| Imágenes | Logotipo, ilustraciones y gráficos SVG propios |
 | Publicación | GitHub Actions + GitHub Pages |
 
 El sitio no usa JavaScript en el navegador, cookies ni recursos de terceros.
@@ -31,7 +34,8 @@ El sitio no usa JavaScript en el navegador, cookies ni recursos de terceros.
     │   └── partials/         Cabecera, pie y tarjeta de entrada
     ├── assets/
     │   ├── css/styles.css    Hoja de estilos
-    │   └── img/              Portadas, esquemas y gráficos (SVG)
+    │   ├── fonts/            Tipografías (woff2) y sus licencias
+    │   └── img/              Logotipo, portadas, esquemas y gráficos (SVG)
     ├── posts/                Entradas del blog en Markdown
     ├── index.njk             Portada
     ├── archivo.njk           Listado cronológico

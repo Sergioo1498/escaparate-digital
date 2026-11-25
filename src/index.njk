@@ -2,12 +2,20 @@
 layout: layouts/base.njk
 ---
 <section class="presentacion contenedor">
-  <p class="presentacion__antetitulo">Negocios online, sin humo</p>
-  <h1>Cómo se vende hoy cuando la tienda es una pantalla</h1>
-  <p class="presentacion__texto">
-    Un blog sobre el auge de los negocios online: qué dicen los datos oficiales, qué modelos permiten
-    empezar con poco capital y qué obligaciones conviene conocer antes de cobrar el primer pedido.
-  </p>
+  <div class="presentacion__texto-bloque">
+    <p class="presentacion__antetitulo">Negocios online, sin humo</p>
+    <h1>Cómo se vende hoy cuando la tienda es una <em>pantalla</em></h1>
+    <p class="presentacion__texto">
+      Un blog sobre el auge de los negocios online: qué dicen los datos oficiales, qué modelos permiten
+      empezar con poco capital y qué obligaciones conviene conocer antes de cobrar el primer pedido.
+    </p>
+    <p class="presentacion__acciones">
+      <a class="boton" href="{{ collections.entradas[0].url }}">Leer la última entrada</a>
+      <a class="boton boton--secundario" href="/archivo/">Ver el archivo</a>
+    </p>
+  </div>
+  <img class="presentacion__imagen" src="/assets/img/escaparate.svg" width="580" height="460"
+       alt="Ilustración de un escaparate con toldo que muestra un gráfico, un vídeo y una lista, con un cursor haciendo clic">
 </section>
 
 <section class="contenedor" aria-labelledby="titulo-ultima">

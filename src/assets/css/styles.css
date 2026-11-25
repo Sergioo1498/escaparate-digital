@@ -1,43 +1,77 @@
 /* ==========================================================================
    Escaparate digital · hoja de estilos
-   1. Variables   2. Base   3. Estructura   4. Cabecera y pie
-   5. Portada     6. Tarjetas   7. Entrada   8. Páginas   9. Utilidades
+   1. Tipografías   2. Variables   3. Base   4. Estructura
+   5. Cabecera, toldo y pie   6. Portada   7. Tarjetas
+   8. Entrada   9. Páginas   10. Ajustes finales
    ========================================================================== */
 
-/* 1. Variables ------------------------------------------------------------ */
+/* 1. Tipografías (alojadas en el propio sitio, licencia SIL OFL) ---------- */
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces-latin-wght-normal.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Fraunces";
+  src: url("../fonts/fraunces-latin-wght-italic.woff2") format("woff2");
+  font-weight: 100 900;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Instrument Sans";
+  src: url("../fonts/instrument-sans-latin-wght-normal.woff2") format("woff2");
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* 2. Variables ------------------------------------------------------------ */
 :root {
-  --fondo: #f8f5ef;
-  --superficie: #ffffff;
-  --texto: #1e1c19;
-  --texto-suave: #5c574f;
-  --borde: #e3ddd2;
-  --acento: #a8401f;
-  --acento-suave: #f3e3d9;
-  --sombra: 0 1px 2px rgb(30 28 25 / 6%), 0 8px 24px rgb(30 28 25 / 7%);
+  --fondo: #f6f0e4;
+  --superficie: #fffaf0;
+  --texto: #1c1a17;
+  --texto-suave: #5a5349;
+  --borde: #dfd5c0;
+  --trazo: #1c1a17;
+  --sombra: #1c1a17;
+  --acento: #a83e1b;
+  --acento-suave: #f3ddcd;
+  --resalte: #e9b23a;
+  --toldo-1: #b4441f;
+  --toldo-2: #e9b23a;
+  --pie-fondo: #1f4d45;
+  --pie-texto: #f1eadc;
 
-  --fuente-titulos: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
-  --fuente-texto: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --fuente-codigo: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --fuente-titulos: "Fraunces", "Iowan Old Style", "Palatino Linotype", Georgia, serif;
+  --fuente-texto: "Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
 
-  --ancho: 68rem;
+  --ancho: 70rem;
   --ancho-lectura: 44rem;
-  --radio: 14px;
+  --radio: 12px;
 }
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --fondo: #15161a;
-    --superficie: #1d1f25;
-    --texto: #ece8e1;
-    --texto-suave: #a9a49b;
-    --borde: #2e3038;
-    --acento: #f29a76;
-    --acento-suave: #3a2a24;
-    --sombra: 0 1px 2px rgb(0 0 0 / 30%), 0 8px 24px rgb(0 0 0 / 35%);
+    --fondo: #171512;
+    --superficie: #221f1a;
+    --texto: #f1eadc;
+    --texto-suave: #b3aa99;
+    --borde: #3a352d;
+    --trazo: #6b6254;
+    --sombra: #000000;
+    --acento: #f0906b;
+    --acento-suave: #3d2a21;
+    --resalte: #8f6412;
+    --pie-fondo: #11231f;
   }
 }
 
-/* 2. Base ----------------------------------------------------------------- */
+/* 3. Base ----------------------------------------------------------------- */
 *,
 *::before,
 *::after {
@@ -63,14 +97,16 @@ body {
 
 main {
   flex: 1;
-  padding-bottom: 4rem;
+  padding-bottom: 5rem;
 }
 
 h1,
 h2,
 h3 {
   font-family: var(--fuente-titulos);
-  line-height: 1.2;
+  font-weight: 620;
+  line-height: 1.12;
+  letter-spacing: -0.015em;
   text-wrap: balance;
   margin: 0;
 }
@@ -87,17 +123,23 @@ img {
 
 a {
   color: var(--acento);
-  text-underline-offset: 0.18em;
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.2em;
 }
 
 a:hover {
-  text-decoration-thickness: 2px;
+  text-decoration-thickness: 3px;
 }
 
 :focus-visible {
   outline: 3px solid var(--acento);
   outline-offset: 3px;
   border-radius: 4px;
+}
+
+::selection {
+  background: var(--resalte);
+  color: var(--texto);
 }
 
 ul[class],
@@ -107,7 +149,7 @@ ol[class] {
   padding: 0;
 }
 
-/* 3. Estructura ----------------------------------------------------------- */
+/* 4. Estructura ----------------------------------------------------------- */
 .contenedor {
   width: min(100% - 2.5rem, var(--ancho));
   margin-inline: auto;
@@ -123,7 +165,7 @@ ol[class] {
   top: -4rem;
   z-index: 20;
   padding: 0.6rem 1rem;
-  background: var(--acento);
+  background: var(--texto);
   color: var(--fondo);
   border-radius: 8px;
   font-weight: 600;
@@ -133,14 +175,41 @@ ol[class] {
   top: 1rem;
 }
 
-/* 4. Cabecera y pie ------------------------------------------------------- */
+.boton {
+  display: inline-block;
+  padding: 0.7rem 1.2rem;
+  background: var(--texto);
+  color: var(--fondo);
+  border: 2px solid var(--texto);
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  box-shadow: 4px 4px 0 var(--toldo-1);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.boton:hover {
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--toldo-1);
+}
+
+.boton--secundario {
+  background: transparent;
+  color: var(--texto);
+  box-shadow: none;
+}
+
+.boton--secundario:hover {
+  background: var(--superficie);
+  box-shadow: 4px 4px 0 var(--sombra);
+}
+
+/* 5. Cabecera, toldo y pie ------------------------------------------------ */
 .cabecera {
   position: sticky;
   top: 0;
   z-index: 10;
-  background: color-mix(in srgb, var(--fondo) 88%, transparent);
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid var(--borde);
+  background: var(--fondo);
 }
 
 .cabecera__interior {
@@ -148,136 +217,254 @@ ol[class] {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
-  gap: 0.4rem 1.5rem;
-  padding-block: 0.8rem;
+  gap: 0.5rem 1.5rem;
+  padding-block: 0.75rem;
+  border-bottom: 3px solid var(--texto);
+  width: 100%;
+  padding-inline: max(1.25rem, (100% - var(--ancho)) / 2);
 }
 
 .marca {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.65rem;
   color: var(--texto);
   text-decoration: none;
-  font-family: var(--fuente-titulos);
-  font-size: 1.25rem;
-  font-weight: 700;
 }
 
 .marca__icono {
-  color: var(--acento);
   flex-shrink: 0;
+  transition: transform 0.25s ease;
+  transform-origin: 50% 10%;
+}
+
+.marca:hover .marca__icono {
+  transform: rotate(-6deg);
+}
+
+.marca__texto {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.marca__nombre {
+  font-family: var(--fuente-titulos);
+  font-size: 1.45rem;
+  font-weight: 680;
+  letter-spacing: -0.02em;
+}
+
+.marca__apellido {
+  margin-top: 0.12rem;
+  font-family: var(--fuente-titulos);
+  font-size: 0.9rem;
+  font-style: italic;
+  font-weight: 500;
+  letter-spacing: 0.2em;
+  color: var(--acento);
 }
 
 .menu ul {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.25rem;
+  gap: 0.2rem 0.3rem;
   list-style: none;
   margin: 0;
   padding: 0;
 }
 
 .menu a {
+  position: relative;
   display: block;
-  padding: 0.4rem 0.8rem;
-  border-radius: 999px;
-  color: var(--texto-suave);
-  text-decoration: none;
-  font-size: 0.97rem;
-  font-weight: 500;
-  transition: background-color 0.15s, color 0.15s;
-}
-
-.menu a:hover {
+  padding: 0.4rem 0.75rem;
   color: var(--texto);
-  background: var(--borde);
+  text-decoration: none;
+  font-size: 0.98rem;
+  font-weight: 550;
 }
 
-.menu a[aria-current="page"] {
-  color: var(--acento);
-  background: var(--acento-suave);
+/* Subrayado que crece desde la izquierda al pasar el ratón */
+.menu a::after {
+  content: "";
+  position: absolute;
+  left: 0.75rem;
+  right: 0.75rem;
+  bottom: 0.15rem;
+  height: 3px;
+  border-radius: 2px;
+  background: var(--toldo-1);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.2s ease;
+}
+
+.menu a:hover::after,
+.menu a[aria-current="page"]::after {
+  transform: scaleX(1);
+}
+
+.menu a[aria-current="page"]::after {
+  background: var(--toldo-2);
+}
+
+/* El toldo: franjas de dos colores recortadas en ondas con una máscara.
+   La primera capa de la máscara deja visible la banda recta superior y la
+   segunda repite un círculo por franja para formar el festón. */
+.toldo {
+  height: 21px;
+  background: repeating-linear-gradient(90deg, var(--toldo-1) 0 28px, var(--toldo-2) 28px 56px);
+  -webkit-mask:
+    linear-gradient(#000 0 0) top / 100% 7px no-repeat,
+    radial-gradient(circle at 14px 7px, #000 13px, transparent 13.6px) 0 0 / 28px 100% repeat-x;
+  mask:
+    linear-gradient(#000 0 0) top / 100% 7px no-repeat,
+    radial-gradient(circle at 14px 7px, #000 13px, transparent 13.6px) 0 0 / 28px 100% repeat-x;
 }
 
 .pie {
-  border-top: 1px solid var(--borde);
-  background: var(--superficie);
-  color: var(--texto-suave);
+  background: var(--pie-fondo);
+  color: var(--pie-texto);
   font-size: 0.95rem;
 }
 
 .pie__interior {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  gap: 1.5rem 3rem;
-  padding-block: 2.2rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(12rem, 1fr));
+  gap: 2rem 3rem;
+  padding-block: 2.2rem 2.8rem;
+}
+
+.pie__marca {
+  grid-column: span 2;
+  display: grid;
+  gap: 0.4rem;
+  justify-items: start;
+}
+
+/* En el pie el logotipo va siempre sobre verde: se fijan sus colores */
+.marca--pie {
+  margin-bottom: 0.6rem;
+  --texto: #f1eadc;
+  --acento: #f3b79c;
+  color: var(--texto);
 }
 
 .pie__titulo {
-  font-family: var(--fuente-titulos);
-  font-size: 1.15rem;
+  margin-bottom: 0.6rem;
+  font-size: 0.78rem;
   font-weight: 700;
-  color: var(--texto);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--toldo-2);
 }
 
 .pie__enlaces {
   display: grid;
-  grid-template-columns: repeat(2, auto);
-  gap: 0.35rem 2rem;
+  gap: 0.35rem;
 }
 
-/* 5. Portada -------------------------------------------------------------- */
+.pie a:not(.marca) {
+  color: var(--pie-texto);
+}
+
+/* 6. Portada -------------------------------------------------------------- */
 .presentacion {
-  padding-block: clamp(2.5rem, 7vw, 5rem) clamp(1.5rem, 4vw, 2.5rem);
+  display: grid;
+  grid-template-columns: 1fr;
+  align-items: center;
+  gap: 1.5rem 3rem;
+  padding-block: clamp(2rem, 6vw, 4rem) clamp(1rem, 3vw, 2rem);
 }
 
-.presentacion__antetitulo {
-  color: var(--acento);
+@media (min-width: 56rem) {
+  .presentacion {
+    grid-template-columns: 1.15fr 1fr;
+  }
+}
+
+.presentacion__antetitulo,
+.entrada__numero {
+  display: inline-block;
+  padding: 0.25rem 0.7rem;
+  border: 1.5px solid var(--trazo);
+  border-radius: 999px;
+  background: var(--superficie);
+  font-size: 0.78rem;
   font-weight: 700;
-  font-size: 0.85rem;
   letter-spacing: 0.12em;
   text-transform: uppercase;
-  margin-bottom: 0.8rem;
 }
 
 .presentacion h1 {
-  font-size: clamp(2.1rem, 5.5vw, 3.6rem);
-  max-width: 18ch;
-  letter-spacing: -0.01em;
+  margin-top: 1.1rem;
+  font-size: clamp(2.4rem, 6vw, 4.1rem);
+  font-weight: 640;
+  letter-spacing: -0.025em;
+  line-height: 1.04;
+}
+
+/* La palabra clave va en cursiva y con un trazo de rotulador por detrás */
+.presentacion h1 em {
+  font-style: italic;
+  font-weight: 560;
+  padding-inline: 0.08em;
+  background: linear-gradient(transparent 58%, var(--resalte) 58% 92%, transparent 92%);
 }
 
 .presentacion__texto {
-  margin-top: 1.2rem;
-  max-width: 58ch;
+  margin-top: 1.3rem;
+  max-width: 52ch;
   font-size: 1.15rem;
   color: var(--texto-suave);
+}
+
+.presentacion__acciones {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.9rem;
+  margin-top: 1.8rem;
+}
+
+.presentacion__imagen {
+  width: min(100%, 30rem);
+  justify-self: center;
 }
 
 .titulo-seccion {
   display: flex;
   align-items: center;
-  gap: 1rem;
-  margin-block: 2.5rem 1.2rem;
-  font-family: var(--fuente-texto);
-  font-size: 0.85rem;
-  font-weight: 700;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  color: var(--texto-suave);
+  gap: 0.9rem;
+  margin-block: 3rem 1.4rem;
+  font-family: var(--fuente-titulos);
+  font-size: 1.5rem;
+  font-style: italic;
+  font-weight: 560;
+}
+
+.titulo-seccion::before {
+  content: "";
+  width: 0.8rem;
+  height: 0.8rem;
+  border-radius: 50%;
+  background: var(--toldo-1);
+  box-shadow: 0.55rem 0 0 var(--toldo-2);
+  margin-right: 0.55rem;
 }
 
 .titulo-seccion::after {
   content: "";
   flex: 1;
-  height: 1px;
-  background: var(--borde);
+  height: 1.5px;
+  background: var(--trazo);
+  opacity: 0.35;
 }
 
-/* 6. Tarjetas ------------------------------------------------------------- */
+/* 7. Tarjetas ------------------------------------------------------------- */
 .rejilla {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(min(100%, 18.5rem), 1fr));
-  gap: 1.5rem;
+  gap: 1.8rem;
 }
 
 .tarjeta {
@@ -285,16 +472,22 @@ ol[class] {
   display: flex;
   flex-direction: column;
   background: var(--superficie);
-  border: 1px solid var(--borde);
+  border: 2px solid var(--trazo);
   border-radius: var(--radio);
   overflow: hidden;
-  box-shadow: var(--sombra);
-  transition: transform 0.2s ease, border-color 0.2s ease;
+  box-shadow: 6px 6px 0 var(--sombra);
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .tarjeta:hover {
-  transform: translateY(-3px);
-  border-color: var(--acento);
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--toldo-1);
+}
+
+.tarjeta__imagen {
+  position: relative;
+  display: block;
+  border-bottom: 2px solid var(--trazo);
 }
 
 .tarjeta__imagen img {
@@ -303,16 +496,31 @@ ol[class] {
   object-fit: cover;
 }
 
+.tarjeta__numero {
+  position: absolute;
+  top: 0.8rem;
+  left: 0.8rem;
+  padding: 0.15rem 0.6rem;
+  background: #fffaf0;
+  color: #1c1a17;
+  border: 1.5px solid #1c1a17;
+  border-radius: 999px;
+  font-family: var(--fuente-titulos);
+  font-size: 0.85rem;
+  font-style: italic;
+  font-weight: 600;
+}
+
 .tarjeta__cuerpo {
   display: flex;
   flex-direction: column;
   gap: 0.6rem;
-  padding: 1.2rem 1.3rem 1.4rem;
+  padding: 1.2rem 1.3rem 1.3rem;
   flex: 1;
 }
 
 .tarjeta__titulo {
-  font-size: 1.35rem;
+  font-size: 1.4rem;
 }
 
 .tarjeta__titulo a {
@@ -327,14 +535,25 @@ ol[class] {
   inset: 0;
 }
 
-.tarjeta:hover .tarjeta__titulo a {
-  color: var(--acento);
-}
-
 .tarjeta__resumen {
   color: var(--texto-suave);
   font-size: 0.98rem;
   flex: 1;
+}
+
+.tarjeta__leer {
+  font-weight: 650;
+  font-size: 0.92rem;
+  color: var(--acento);
+}
+
+.tarjeta__leer span {
+  display: inline-block;
+  transition: transform 0.18s ease;
+}
+
+.tarjeta:hover .tarjeta__leer span {
+  transform: translateX(5px);
 }
 
 .tarjeta .etiquetas {
@@ -349,6 +568,8 @@ ol[class] {
 
   .tarjeta--destacada .tarjeta__imagen {
     flex: 1.25;
+    border-bottom: 0;
+    border-right: 2px solid var(--trazo);
   }
 
   .tarjeta--destacada .tarjeta__imagen img {
@@ -359,11 +580,12 @@ ol[class] {
   .tarjeta--destacada .tarjeta__cuerpo {
     flex: 1;
     justify-content: center;
+    gap: 0.8rem;
     padding: 2rem;
   }
 
   .tarjeta--destacada .tarjeta__titulo {
-    font-size: 1.9rem;
+    font-size: 2.1rem;
   }
 
   .tarjeta--destacada .tarjeta__resumen {
@@ -388,21 +610,23 @@ ol[class] {
 
 .etiquetas a {
   display: block;
-  padding: 0.15rem 0.65rem;
+  padding: 0.12rem 0.6rem;
+  border: 1.5px solid var(--trazo);
   border-radius: 999px;
-  background: var(--acento-suave);
-  color: var(--acento);
-  font-size: 0.8rem;
-  font-weight: 600;
+  color: var(--texto);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   text-decoration: none;
+  transition: background-color 0.15s;
 }
 
 .etiquetas a:hover {
-  background: var(--acento);
-  color: var(--fondo);
+  background: var(--resalte);
 }
 
-/* 7. Entrada -------------------------------------------------------------- */
+/* 8. Entrada -------------------------------------------------------------- */
 .migas ol {
   display: flex;
   flex-wrap: wrap;
@@ -415,45 +639,71 @@ ol[class] {
 }
 
 .migas li + li::before {
-  content: "/";
+  content: "›";
   margin-right: 0.5rem;
-  color: var(--borde);
 }
 
 .entrada__cabecera {
   display: flex;
   flex-direction: column;
+  align-items: flex-start;
   gap: 1rem;
-  padding-block: clamp(2rem, 5vw, 3.5rem) 2rem;
+  padding-block: clamp(2rem, 5vw, 3.2rem) 2rem;
 }
 
 .entrada__cabecera h1 {
-  font-size: clamp(2rem, 5vw, 3rem);
-  letter-spacing: -0.01em;
+  font-size: clamp(2.2rem, 5.5vw, 3.4rem);
+  letter-spacing: -0.025em;
 }
 
 .entrada__resumen {
-  font-size: 1.2rem;
+  font-family: var(--fuente-titulos);
+  font-size: 1.3rem;
+  font-style: italic;
+  font-weight: 450;
+  line-height: 1.45;
   color: var(--texto-suave);
 }
 
 .entrada__portada {
-  margin-block: 0 2.5rem;
+  margin-block: 0 2.8rem;
 }
 
 .entrada__portada img {
   width: 100%;
+  border: 2px solid var(--trazo);
   border-radius: var(--radio);
-  border: 1px solid var(--borde);
+  box-shadow: 8px 8px 0 var(--sombra);
 }
 
 .prosa > * + * {
   margin-top: 1.25rem;
 }
 
+/* Letra capital en el primer párrafo de cada entrada */
+.entrada .prosa > p:first-child::first-letter {
+  float: left;
+  margin: 0.08em 0.12em 0 0;
+  font-family: var(--fuente-titulos);
+  font-size: 3.6em;
+  font-weight: 640;
+  line-height: 0.8;
+  color: var(--acento);
+}
+
 .prosa h2 {
-  font-size: 1.7rem;
-  margin-top: 2.8rem;
+  margin-top: 3rem;
+  font-size: 1.8rem;
+}
+
+.prosa h2::before {
+  content: "";
+  display: block;
+  width: 2.6rem;
+  height: 5px;
+  margin-bottom: 0.8rem;
+  border-radius: 3px;
+  background: linear-gradient(90deg, var(--toldo-1) 50%, var(--toldo-2) 50%);
 }
 
 .prosa h3 {
@@ -472,34 +722,51 @@ ol[class] {
 
 .prosa li::marker {
   color: var(--acento);
+  font-weight: 700;
 }
 
 .prosa strong {
-  font-weight: 650;
+  font-weight: 680;
 }
 
 .prosa blockquote {
+  position: relative;
   margin-inline: 0;
-  padding: 1rem 1.3rem;
-  border-left: 4px solid var(--acento);
-  background: var(--acento-suave);
-  border-radius: 0 var(--radio) var(--radio) 0;
+  padding: 1.2rem 1.4rem 1.2rem 3.4rem;
+  background: var(--superficie);
+  border: 2px solid var(--trazo);
+  border-radius: var(--radio);
+  box-shadow: 5px 5px 0 var(--toldo-2);
+  font-family: var(--fuente-titulos);
+  font-size: 1.15rem;
+  font-style: italic;
+  line-height: 1.5;
+}
+
+.prosa blockquote::before {
+  content: "«";
+  position: absolute;
+  left: 0.9rem;
+  top: 0.2rem;
+  font-size: 3rem;
+  font-style: normal;
+  line-height: 1.2;
+  color: var(--acento);
 }
 
 .prosa figure {
-  margin: 2.2rem 0;
+  margin: 2.4rem 0;
 }
 
 .prosa figure img {
   width: 100%;
+  border: 2px solid var(--trazo);
   border-radius: var(--radio);
-  border: 1px solid var(--borde);
   background: #ffffff;
 }
 
-.prosa figcaption,
-.entrada__portada figcaption {
-  margin-top: 0.6rem;
+.prosa figcaption {
+  margin-top: 0.7rem;
   font-size: 0.88rem;
   color: var(--texto-suave);
   text-align: center;
@@ -507,7 +774,7 @@ ol[class] {
 
 .tabla-envoltorio {
   overflow-x: auto;
-  border: 1px solid var(--borde);
+  border: 2px solid var(--trazo);
   border-radius: var(--radio);
   background: var(--superficie);
 }
@@ -528,11 +795,11 @@ ol[class] {
 }
 
 .prosa thead th {
-  font-size: 0.8rem;
-  letter-spacing: 0.06em;
+  font-size: 0.76rem;
+  letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--texto-suave);
-  background: var(--fondo);
+  background: var(--acento-suave);
+  border-bottom: 2px solid var(--trazo);
 }
 
 .prosa tbody tr:last-child > * {
@@ -540,59 +807,77 @@ ol[class] {
 }
 
 .prosa tbody th {
-  font-weight: 650;
+  font-weight: 680;
 }
 
 .dato {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9.5rem, 1fr));
-  gap: 0.8rem;
+  gap: 1rem;
   list-style: none;
   padding: 0 !important;
 }
 
 .prosa > .dato {
-  margin-top: 1.6rem;
+  margin-block: 1.8rem 2.2rem;
 }
 
 .dato li {
   margin: 0 !important;
   padding: 1rem 1.1rem;
   background: var(--superficie);
-  border: 1px solid var(--borde);
+  border: 2px solid var(--trazo);
   border-radius: var(--radio);
   font-size: 0.9rem;
   color: var(--texto-suave);
 }
 
+.dato li:nth-child(odd) {
+  box-shadow: 4px 4px 0 var(--toldo-1);
+}
+
+.dato li:nth-child(even) {
+  box-shadow: 4px 4px 0 var(--toldo-2);
+}
+
 .dato strong {
   display: block;
+  margin-bottom: 0.3rem;
   font-family: var(--fuente-titulos);
-  font-size: 1.7rem;
-  line-height: 1.1;
-  color: var(--acento);
+  font-size: 1.9rem;
+  font-weight: 640;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: var(--texto);
 }
 
 .fuentes {
-  margin-top: 3rem;
-  padding-top: 1.3rem;
-  border-top: 1px solid var(--borde);
+  margin-top: 3.2rem;
+  padding: 1.2rem 1.4rem;
+  border: 1.5px dashed var(--trazo);
+  border-radius: var(--radio);
   font-size: 0.92rem;
   color: var(--texto-suave);
 }
 
 .fuentes h2 {
-  font-family: var(--fuente-texto);
-  font-size: 0.85rem;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
   margin-top: 0;
+  font-family: var(--fuente-texto);
+  font-size: 0.78rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--texto);
+}
+
+.fuentes h2::before {
+  display: none;
 }
 
 .vecinas {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(min(100%, 15rem), 1fr));
-  gap: 1rem;
+  gap: 1.2rem;
   margin-top: 3.5rem;
 }
 
@@ -602,14 +887,15 @@ ol[class] {
   gap: 0.3rem;
   padding: 1rem 1.2rem;
   background: var(--superficie);
-  border: 1px solid var(--borde);
+  border: 2px solid var(--trazo);
   border-radius: var(--radio);
   text-decoration: none;
-  transition: border-color 0.2s;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
 }
 
 .vecinas__enlace:hover {
-  border-color: var(--acento);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--toldo-1);
 }
 
 .vecinas__enlace--siguiente {
@@ -617,38 +903,41 @@ ol[class] {
 }
 
 .vecinas__sentido {
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: var(--texto-suave);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--acento);
 }
 
 .vecinas__titulo {
   font-family: var(--fuente-titulos);
-  font-weight: 700;
+  font-size: 1.1rem;
+  font-weight: 620;
   color: var(--texto);
-  line-height: 1.3;
+  line-height: 1.25;
 }
 
 .volver {
-  margin-top: 2rem;
+  margin-top: 2.2rem;
   text-align: center;
   font-weight: 600;
 }
 
-/* 8. Páginas -------------------------------------------------------------- */
+/* 9. Páginas -------------------------------------------------------------- */
 .pagina {
   padding-top: clamp(2rem, 5vw, 3.5rem);
 }
 
 .pagina h1 {
-  font-size: clamp(2rem, 5vw, 2.8rem);
+  font-size: clamp(2.3rem, 6vw, 3.4rem);
   margin-block: 0.8rem 0.6rem;
 }
 
 .pagina__intro {
   color: var(--texto-suave);
-  font-size: 1.1rem;
-  margin-bottom: 2rem;
+  font-size: 1.12rem;
+  margin-bottom: 2.2rem;
 }
 
 .pagina--centrada {
@@ -657,36 +946,55 @@ ol[class] {
 
 .error__codigo {
   font-family: var(--fuente-titulos);
-  font-size: clamp(5rem, 20vw, 9rem);
-  font-weight: 700;
+  font-size: clamp(6rem, 22vw, 11rem);
+  font-style: italic;
+  font-weight: 640;
   line-height: 1;
-  color: var(--acento-suave);
+  color: var(--toldo-1);
+  text-shadow: 6px 6px 0 var(--toldo-2);
 }
 
 .lista-archivo li {
+  position: relative;
   display: grid;
-  gap: 0.2rem;
-  padding-block: 1.2rem;
-  border-bottom: 1px solid var(--borde);
+  gap: 0.25rem;
+  padding: 1.4rem 0 1.4rem 4.2rem;
+  border-bottom: 1.5px solid var(--borde);
+}
+
+.lista-archivo__numero {
+  position: absolute;
+  left: 0;
+  top: 1.25rem;
+  font-family: var(--fuente-titulos);
+  font-size: 2.4rem;
+  font-style: italic;
+  font-weight: 560;
+  line-height: 1;
+  color: var(--toldo-1);
 }
 
 .lista-archivo time {
-  font-size: 0.88rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
   color: var(--texto-suave);
 }
 
 .lista-archivo a {
   font-family: var(--fuente-titulos);
-  font-size: 1.35rem;
-  font-weight: 700;
-  line-height: 1.25;
+  font-size: 1.5rem;
+  font-weight: 620;
+  line-height: 1.2;
   color: var(--texto);
   text-decoration: none;
 }
 
 .lista-archivo a:hover {
-  color: var(--acento);
   text-decoration: underline;
+  text-decoration-color: var(--toldo-2);
+  text-decoration-thickness: 4px;
 }
 
 .lista-archivo p {
@@ -697,39 +1005,40 @@ ol[class] {
 .nube {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.7rem;
+  gap: 0.9rem;
 }
 
 .nube a {
   display: inline-flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.7rem;
   padding: 0.55rem 0.6rem 0.55rem 1.1rem;
   background: var(--superficie);
-  border: 1px solid var(--borde);
+  border: 2px solid var(--trazo);
   border-radius: 999px;
+  box-shadow: 3px 3px 0 var(--sombra);
   color: var(--texto);
-  font-weight: 600;
+  font-weight: 650;
   text-decoration: none;
-  transition: border-color 0.2s;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
 }
 
 .nube a:hover {
-  border-color: var(--acento);
-  color: var(--acento);
+  transform: translate(-2px, -2px);
+  box-shadow: 5px 5px 0 var(--toldo-1);
 }
 
 .nube__cuenta {
-  min-width: 1.7rem;
+  min-width: 1.8rem;
   padding: 0.05rem 0.5rem;
   border-radius: 999px;
-  background: var(--acento-suave);
-  color: var(--acento);
+  background: var(--resalte);
+  color: var(--texto);
   font-size: 0.82rem;
   text-align: center;
 }
 
-/* 9. Utilidades ----------------------------------------------------------- */
+/* 10. Ajustes finales ----------------------------------------------------- */
 @media (max-width: 30rem) {
   body {
     font-size: 1rem;
@@ -740,12 +1049,25 @@ ol[class] {
   }
 
   .menu a {
-    padding: 0.35rem 0.6rem;
+    padding: 0.35rem 0.55rem;
     font-size: 0.92rem;
   }
 
-  .pie__enlaces {
-    grid-template-columns: 1fr;
+  .menu a::after {
+    left: 0.55rem;
+    right: 0.55rem;
+  }
+
+  .pie__marca {
+    grid-column: auto;
+  }
+
+  .lista-archivo li {
+    padding-left: 3.2rem;
+  }
+
+  .lista-archivo__numero {
+    font-size: 1.9rem;
   }
 }
 

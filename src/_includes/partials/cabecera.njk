@@ -1,11 +1,7 @@
 <header class="cabecera">
-  <div class="contenedor cabecera__interior">
+  <div class="cabecera__interior">
     <a class="marca" href="/" aria-label="{{ site.title }}, ir al inicio">
-      <svg class="marca__icono" viewBox="0 0 32 32" width="32" height="32" aria-hidden="true">
-        <rect width="32" height="32" rx="8" fill="currentColor"/>
-        <path d="M7 13l2-5h14l2 5M8.5 13v10.5h15V13M13.5 23.5v-6h5v6" fill="none" stroke="var(--fondo)" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
-      </svg>
-      <span class="marca__texto">{{ site.title }}</span>
+      {% include "partials/logo.njk" %}
     </a>
     <nav class="menu" aria-label="Navegación principal">
       <ul>
@@ -16,4 +12,5 @@
       </ul>
     </nav>
   </div>
+  <div class="toldo" aria-hidden="true"></div>
 </header>

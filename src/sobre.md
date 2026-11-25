@@ -19,7 +19,9 @@ Es un sitio estático: no hay base de datos ni código de servidor. Las páginas
 
 - **Generador:** [Eleventy](https://www.11ty.dev/). Las entradas se escriben en Markdown y las plantillas, en Nunjucks.
 - **Diseño:** HTML semántico y una única hoja de estilos escrita a mano, sin frameworks. La maquetación usa Flexbox y Grid, y los colores se adaptan al modo claro u oscuro del dispositivo.
-- **Imágenes:** las portadas, los esquemas y los gráficos son ilustraciones propias en formato SVG. Los gráficos se han dibujado a partir de los datos de las fuentes citadas.
+- **Identidad:** el logotipo es un escaparate con toldo y un cursor dentro. El toldo se repite bajo la cabecera, dibujado solo con CSS (un degradado a franjas recortado con una máscara).
+- **Tipografías:** [Fraunces](https://github.com/undercasetype/Fraunces) para los títulos e [Instrument Sans](https://github.com/Instrument/instrument-sans) para el texto, las dos de licencia abierta y servidas desde el propio sitio.
+- **Imágenes:** el logotipo, las portadas, los esquemas y los gráficos son ilustraciones propias en formato SVG. Los gráficos se han dibujado a partir de los datos de las fuentes citadas.
 - **Publicación:** el código está en GitHub y cada cambio se compila y se publica en GitHub Pages de forma automática.
 - **Privacidad:** el sitio no usa cookies ni carga recursos de terceros.
 
