@@ -9,6 +9,10 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
 
+  // Marca de compilación: se añade a la URL de la hoja de estilos para que el
+  // navegador no siga usando una versión antigua guardada en caché.
+  eleventyConfig.addGlobalData("compilacion", () => Date.now().toString(36));
+
   // Entradas ordenadas de la más reciente a la más antigua.
   // Cada una recibe además su número de orden (la primera publicada es la n.º 1).
   eleventyConfig.addCollection("entradas", (api) => {
